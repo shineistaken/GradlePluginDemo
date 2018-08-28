@@ -22,5 +22,39 @@ uploadArchives {
         repository(url: LOCAL_REPO_URL)
         pom.groupId = PROJ_GROUP
         pom.artifactId = PROJ_ARTIFACTID
-        pom.version = PROJ_VERSION    	}
+        pom.version = PROJ_VERSION
+    }
+}
+
+apply plugin: 'com.novoda.bintray-release'
+publish {
+//    userOrg = '组织ID' //bintray账户下某个组织id
+//    groupId = 'com.openxu.viewlib' //maven仓库下库的包名，一般为模块包名
+//    artifactId = 'OXViewLib' //项目名称
+//    publishVersion = '1.0.2' //版本号
+//    desc = 'custom chart for android' //项目介绍，可以不写
+//    website = '' //项目主页，可以不写
+    userOrg = USER_ORG
+    groupId = PROJ_GROUP
+    artifactId = PROJ_ARTIFACTID
+    publishVersion = PROJ_VERSION
+    desc = DESC
+    website = WEBSITE
+
+//    //加载资源
+//    Properties properties = new Properties()
+//    InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream();
+//    properties.load(inputStream)
+//
+//    //读取key.file配置路径对应的文件 key.file=C\:\\work\\Key.jks
+////    def sdkDir = properties.getProperty('key.file')
+////    storeFile file( sdkDir )
+//
+//    //读取字段
+////    用户名
+//    bintrayUser = properties.getProperty('Bintray_User')
+////    apikey
+//    bintrayKey = properties.getProperty('Bintray_API_Key')
+//    //是否只运行不发布
+//    dryRun = properties.getProperty('dryRun')
 }
